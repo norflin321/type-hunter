@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'FiraCode-Medium';
+  src: url('./font/FiraCode-Medium.woff') format('woff');
+}
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at right, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+}
+.input-group {
+  position: absolute;
+  padding: 15px 0 0;
+  top: 40px;
+  width: 350px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.input {
+  font-family: FiraCode-Medium;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  outline: 0;
+  font-size: 2.5rem;
+  color: #fff;
+  padding: 5px 0;
+  background: transparent;
+  text-align: center;
+}
+::selection {
+  background-color: #81d4fa;
+}
+.word {
+  position: absolute;
+  user-select: none;
+  font-size: 1.5rem;
+}
+.score {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+}
+.lifes {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.life-icon {
+  width: 17px;
+  margin-left: 2px;
+}
+.lifes span {
+  margin-right: 10px;
+}
+.start-new-game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.start-new-game > span {
+  cursor: pointer;
+  margin-top: 10px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+    <style>
+      html {
+        height: 100%;
+        background: radial-gradient(ellipse at right, #1b2735 0%, #090a0f 100%);
+        overflow: hidden;
+      }
+
+      body {
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      const boxShadows = [];
+      for (i = 0; i < 800; i++) {
+        let randomHeight = Math.floor(Math.random() * (window.innerHeight - 0) + 0);
+        let randomWidth = Math.floor(Math.random() * (window.innerWidth * 2 - 0) + 0);
+        boxShadows.push(`${randomWidth}px ${randomHeight}px #81d4fa`);
+      }
+      const styleElem = document.head.appendChild(document.createElement('style'));
+      styleElem.innerHTML = `
+        #stars {
+          width: 1px;
+          height: 1px;
+          background: transparent;
+          box-shadow: ${boxShadows};
+        }
+        #stars:after {
+          content: ' ';
+          position: absolute;
+          left: ${window.innerWidth * 2}px;
+          width: 1px;
+          height: 1px;
+          background: transparent;
+          box-shadow: ${boxShadows}
+        }
+        @keyframes animStar {
+          from {
+            transform: translateX(0px);
+          }
+          to {
+            transform: translateX(-${window.innerWidth * 2}px);
+          }
+        }
+      `;
+    </script>
+  </body>
+</html>
